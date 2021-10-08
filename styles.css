@@ -1,6 +1,9 @@
 body {
-bacground-color: blue
+bacground-color: powderblue;
 }
 h1 {
-bacground-color: yellow
+	color: blue;
 }
+p {
+	color: red;
+}	
