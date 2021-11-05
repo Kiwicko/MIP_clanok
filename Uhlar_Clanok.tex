@@ -15,9 +15,10 @@
 
 \pagestyle{headings}
 
-\title{Modelovanie spracovania elektronického podania ÚPVS sekvenčnými UML diagramami \thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
+\title{{\bf Modelovanie spracovania elektronického podania ÚPVS sekvenčnými UML diagramami}
 
 \author{Viktor Uhlár\\[2pt]
+\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
 	{\small \texttt{xuhlar@stuba.sk}}
@@ -29,6 +30,8 @@
 
 \begin{document}
 
+\begin {titlepage}
+\centering
 \maketitle
 
 \begin{abstract}
@@ -36,19 +39,19 @@
 
 {Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné zasielať elektronické podania priamo z vlastných informačných systémov (teda bez nutosti priuhlasovania sa do elektronických schránok pomocou eID - elektronického občianskeho preukazu).}\\
 {Keďže postupnosť spracovania elektronického podania závisí od jeho účelu, musí byť pred fázou samotnej integrácie vypracovaný model "workflow". ÚPVS pre tento účel vyžaduje tzv. Dohodu io integračnom zámere, kde je spracovanie modelované vo forme sekvenčného UML diagramu.
-V tejto práci sa teda budem venovať teórii modelovania sekvenčných UML modelov s konrétny príkladom pre spracovanie elektronického rozhodnutia "fiktívneho"  OVM (orgánu verejnej moci SR).}
+V tejto práci sa teda budem venovať teórii modelovania sekvenčných UML modelov s konrétny príkladom pre spracovanie elektronického rozhodnutia ``fiktívneho''  OVM (orgánu verejnej moci SR).}
 
 \end{abstract}
 
-
-
+\end{titlepage}
+\flushleft
 \section{Úvod}
 
 Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné pristupovať k elektronickej schránke priamo z vlastných informačných systémov - teda bez nutosti prihlasovania sa eID - elektronického občianskeho preukazu.\\
 
 Keďže spôsob pripojenia môže byť rôzny, správca ÚPVS (Národná agentúra pre sieťové a elektronické služby - NASES) vyžaduje podrobný integračný zámer, ktorého súčasťou je aj modelovanie integrácie vo fornme sekvenčného UML diagramu.\\ 
 
-V tejto práci sa teda budem venovať:\\
+V tejto práci sa teda budem venovať:
 
 \begin{itemize}
 \item Rámcovému popisu UML a typov diagramov
@@ -57,24 +60,22 @@ V tejto práci sa teda budem venovať:\\
 \item Modelovej integračnej situácie pripojenia na ÚPVS a popisu tvorby súvisiaceho sekvenčného UML diagramu
 \end{itemize}
 
+Informácie pre vytvorenie tejto práce som čerpal:
 
-Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
-Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
-Záverečné poznámky prináša časť~\ref{zaver}.
+\begin{itemize}
+\item Z integračnej dokumentácie spoločnosti NASES
+\item Z internetových zdrojov ku UML modelovaniu
+\item Z praktickej skúsenosti pri spolupráci v rámci integračného ÚPVS projektu
+\end{itemize}
+Zoznam konkrétnej použitej literatúry je uvedený v prílohe Literatúra.\\
 
+Práca môže byť užitočná nielen pre analytikov, ktorí zodpovedajú za modelovanie integračných „ÚPVS“ projektov, ale aj pre všeobecnejšie pochopenie zmyslu sekvenčných diagramov (ako integrálnej súčasti software development cyklov).
 
 
 \section{Popis UML a rozdelenie typov diagramov} \label{Popis}
 
-Z obr.~\ref{f:rozhod} je všetko jasné. 
+UML znamená Unified Modeling Language, teda grafický jazyk na vizualizáciu, špecifikáciu, navrhovanie a dokumentáciu programových systémov. UML ponúka štandardný spôsob zápisu tak návrhov systémov vrátane konceptuálnych prvkov ako sú business procesy a systémové funkcie, tak konkrétnych prvkov ako sú príkazy programovacieho jazyka, databázové schémy a znovupoužiteľné programové komponenty\cite{WIKI, SEQ} .
 
-\begin{figure*}[tbh]
-\centering
-%\includegraphics[scale=1.0]{diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
-\label{f:rozhod}
-\end{figure*}
 
 
 
@@ -86,28 +87,6 @@ Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dok
 
 
 \section{Nástroj na modelovanie formou sekvenčného UML diagramu} \label{Nástroj}
-
-Niekedy treba uviesť zoznam:
-
-\begin{itemize}
-\item jedna vec
-\item druhá vec
-	\begin{itemize}
-	\item x
-	\item y
-	\end{itemize}
-\end{itemize}
-
-Ten istý zoznam, len číslovaný:
-
-\begin{enumerate}
-\item jedna vec
-\item druhá vec
-	\begin{enumerate}
-	\item x
-	\item y
-	\end{enumerate}
-\end{enumerate}
 
 
 \section{Integračný scenár a jeho modelovanie} \label{Integračný}
