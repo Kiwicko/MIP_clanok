@@ -14,16 +14,15 @@
 %\usepackage{times}
 
 
-\title{{\bf Modelovanie spracovania elektronického podania ÚPVS sekvenčnými UML diagramami}
+\title{{\bf Modelovanie spracovania elektronického podania ÚPVS sekvenčnými UML diagramami}\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
 
 \author{Viktor Uhlár\\[2pt]
-\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
 	{\small \texttt{xuhlar@stuba.sk}}
 	}
 
-\date{\small 6. november 2021} % upravte
+\date{\small 6. november 2021} 
 
 
 
@@ -37,6 +36,7 @@
 
 
 {Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné zasielať elektronické podania priamo z vlastných informačných systémov (teda bez nutosti priuhlasovania sa do elektronických schránok pomocou eID - elektronického občianskeho preukazu).}\\
+
 {Keďže postupnosť spracovania elektronického podania závisí od jeho účelu, musí byť pred fázou samotnej integrácie vypracovaný model "workflow". ÚPVS pre tento účel vyžaduje tzv. Dohodu io integračnom zámere, kde je spracovanie modelované vo forme sekvenčného UML diagramu.
 V tejto práci sa teda budem venovať teórii modelovania sekvenčných UML modelov s konrétny príkladom pre spracovanie elektronického rozhodnutia ``fiktívneho''  OVM (orgánu verejnej moci SR).}
 
@@ -73,16 +73,47 @@ Práca môže byť užitočná nielen pre analytikov, ktorí zodpovedajú za mod
 
 \section{Popis UML a rozdelenie typov diagramov} \label{Popis}
 
-UML znamená Unified Modeling Language, teda grafický jazyk na vizualizáciu, špecifikáciu, navrhovanie a dokumentáciu programových systémov. UML ponúka štandardný spôsob zápisu tak návrhov systémov vrátane konceptuálnych prvkov ako sú business procesy a systémové funkcie, tak konkrétnych prvkov ako sú príkazy programovacieho jazyka, databázové schémy a znovupoužiteľné programové komponenty\cite{WIKI, SEQ} .
+UML znamená Unified Modeling Language, teda grafický jazyk na vizualizáciu, špecifikáciu, navrhovanie a dokumentáciu programových systémov. UML ponúka štandardný spôsob zápisu tak návrhov systémov vrátane konceptuálnych prvkov ako sú business procesy a systémové funkcie, tak konkrétnych prvkov ako sú príkazy programovacieho jazyka, databázové schémy a znovupoužiteľné programové komponenty.\cite{WIKI}\\
 
+Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakteristika je zrejmá z nasledovného obrázku\cite{UMLUni}:
+
+
+
+ Diagramy je teda možné rozdeliť do 3 základných skupín\cite{WIKI}:
+
+\begin{enumerate}
+\item Štruktúrne diagramy, kam patria:
+	\begin{itemize}
+	\item diagram tried (class diagram)
+	\item diagram komponentov (component diagram)
+	\item diagram zloženej štruktúry (composite structure diagram)
+	\item diagram nasadenia (deployment diagram)
+	\item diagram balíčkov (package diagram)
+	\item diagram objektov (object diagram), nazýva sa aj diagram inštancií
+	\end{itemize}
+\item Diagramy správania, kam patria:
+	\begin{itemize}
+	\item diagram aktivít (activity diagram)
+	\item diagram prípadov použitia (use case diagram)
+	\item stavový diagram (state machine diagram)
+	\end{itemize}
+\item Diagramy interakcie, kam patria:
+	\begin{itemize}
+	\item sekvenčný diagram (sequence diagram)
+	\item diagram komunikácie (communication diagram) - predtým diagram spolupráce (collaboration diagram)
+	\item diagram prehľadu interakcií (interaction overview diagram)
+	\item diagram časovania (timing diagram)
+	\end{itemize}
+\end{enumerate}
 
 
 
 \section{Sekvenčný diagram a jeho modelovanie} \label{Sekvenčný}
 
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
+\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
 
-Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
+ %Dôležité veci možno 
+\emph{zdôrazniť kurzívou}.
 
 
 \section{Nástroj na modelovanie formou sekvenčného UML diagramu} \label{Nástroj}
@@ -90,18 +121,17 @@ Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dok
 
 \section{Integračný scenár a jeho modelovanie} \label{Integračný}
 
+..... test a diagramy budú doplnené... \\
+
+
+
+
+\section{Zhodnotenie} \label{Zhodnotenie} % prípadne iný variant názvu
+..... zhodnotenie bude doplnené... \\
+
+
 \paragraph{Veľmi dôležitá poznámka.}
 Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
-
-
-
-\section{Niečo mozno ešte} \label{Niečo}
-
-
-
-
-
-\section{Záver} \label{zaver} % prípadne iný variant názvu
 
 
 
