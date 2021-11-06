@@ -38,8 +38,8 @@
 
 
 \noindent{Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné zasielať elektronické podania priamo z vlastných informačných systémov (teda bez nutosti priuhlasovania sa do elektronických schránok pomocou eID - elektronického občianskeho preukazu).}\newline
-\noindent{Keďže postupnosť spracovania elektronického podania závisí od jeho účelu, musí byť pred fázou samotnej integrácie vypracovaný model "workflow". ÚPVS pre tento účel vyžaduje tzv. Dohodu o integračnom zámere, kde je spracovanie modelované vo forme sekvenčného UML diagramu.
-V tejto práci sa teda budem venovať teórii modelovania sekvenčných UML modelov s konrétnym príkladom pre spracovanie elektronického rozhodnutia ``fiktívneho''  OVM (orgánu verejnej moci SR).}
+\noindent{Keďže postupnosť spracovania elektronického podania závisí od jeho účelu, musí byť pred fázou samotnej integrácie vypracovaný model ``workflow“. ÚPVS pre tento účel vyžaduje tzv. Dohodu o integračnom zámere, kde je spracovanie modelované vo forme sekvenčného UML diagramu.
+V tejto práci sa teda budem venovať teórii modelovania sekvenčných UML modelov s konrétnym príkladom pre spracovanie elektronického rozhodnutia ``fiktívneho“  OVM (orgánu verejnej moci SR).}
 
 \end{abstract}
 
@@ -69,7 +69,7 @@ Informácie pre vytvorenie tejto práce som čerpal:
 \end{itemize}
 Zoznam konkrétnej použitej literatúry je uvedený v prílohe Literatúra.\\
 
-Práca môže byť užitočná nielen pre analytikov, ktorí zodpovedajú za modelovanie integračných „ÚPVS“ projektov, ale aj pre všeobecnejšie pochopenie zmyslu sekvenčných diagramov (ako integrálnej súčasti software development cyklov).
+Práca môže byť užitočná nielen pre analytikov, ktorí zodpovedajú za modelovanie integračných ``ÚPVS“ projektov, ale aj pre všeobecnejšie pochopenie zmyslu sekvenčných diagramov (ako integrálnej súčasti software development cyklov).
 
 
 \section{Popis UML a rozdelenie typov diagramov} \label{2sek}
@@ -118,14 +118,32 @@ Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakte
 
 \section{Sekvenčný diagram a jeho modelovanie} \label{3sek}
 
-\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
+Skevenčný diagram modeluje interakciu medzi objektami počas konkrétneho ``use case“, teda prípadu použitia. Graficky ilustruje, ako rozličné časti systému navzájom spolupracujú tak, aby zrealizovali požadovanú funkciu. Zjednodušene povedané: sekvenčný diagram ukazuje postup činností rozličných častí systému\cite{SDT}.\newline
 
- %Dôležité veci možno 
-\emph{zdôrazniť kurzívou}.
+Pri zobrazení sa využívanie niekoľko značiek, pričom k najpoužívanejším patria:
+\begin{itemize}
+	\item Lifeline – životná línia
+	\item Actor – účinkujúci
+	\item Activity – aktivita
+	\item State – stav
+	\item Message arrow –tok informácie, ktorý môže byť:
+		\begin{itemize}
+		\item Synchronous (synchrónna)
+		\item Asynchronous (nesynchrónna)
+		\end{itemize}
+\end{itemize}
+
+Na nasledovnom obrázku je ilustrácia jednoduchého sekvenčného diagramu, využívajúceho vyššie uvedené značky\cite{SDT}:
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Images/Obr2.jpg}
+\end{figure}
 
 
+\newpage
 \section{Nástroj na modelovanie formou sekvenčného UML diagramu} \label{4sek}
 
+..... nástroj bude doplnený...
 
 \section{Integračný scenár a jeho modelovanie} \label{5sek}
 
@@ -137,6 +155,10 @@ Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakte
 \section{Zhodnotenie} \label{6sek} % prípadne iný variant názvu
 ..... zhodnotenie bude doplnené... \\
 
+ %Dôležité veci možno 
+\emph{zdôrazniť kurzívou}.
+
+\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
 
 \paragraph{Veľmi dôležitá poznámka.}
 Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
