@@ -22,10 +22,10 @@
 	{\small \texttt{xuhlar@stuba.sk}}
 	}
 
-\date{\small 6. november 2021} 
+\date{\small 14. November 2021} 
 
 
-\linespread{1.3}
+\linespread{1.2}
 \begin{document}
 
 
@@ -47,17 +47,18 @@ V tejto práci sa teda budem venovať teórii modelovania sekvenčných UML mode
 \flushleft
 \section{Úvod}\label{1sek}
 
-Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné pristupovať k elektronickej schránke priamo z vlastných informačných systémov - teda bez nutosti prihlasovania sa eID - elektronického občianskeho preukazu.\\
+Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Umožňuje vykonávať elektronickú úradnú komunikáciu s ktorýmkoľvek orgánom verejnej moci a nasmeruje používateľa na využitie konkrétnej elektrickej služby verejnej správy. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné pristupovať k elektronickej schránke priamo z vlastných informačných systémov - teda bez nutosti prihlasovania sa eID - elektronického občianskeho preukazu.\cite{UPVS}\cite{SVK.sk} \\
 
-Keďže spôsob pripojenia môže byť rôzny, správca ÚPVS (Národná agentúra pre sieťové a elektronické služby - NASES) vyžaduje podrobný integračný zámer, ktorého súčasťou je aj modelovanie integrácie vo fornme sekvenčného UML diagramu.\newline
+Keďže spôsob pripojenia môže byť rôzny, správca ÚPVS (Národná agentúra pre sieťové a elektronické služby - NASES) vyžaduje podrobný integračný zámer, ktorého súčasťou je aj modelovanie integrácie vo forme sekvenčného UML diagramu.\newline
+
+
 
 V tejto práci sa teda budem venovať:
 
 \begin{itemize}
-\item Rámcovému popisu UML a typov diagramov
-\item Spôsobu tvorby sekvenčných UML diagramov
-\item Jednoduchému nástroju pre modelovanie UML diagramov
-\item Modelovej integračnej situácie pripojenia na ÚPVS a popisu tvorby súvisiaceho sekvenčného UML diagramu
+\item Rámcovému popisu UML a typov diagramov\ref{2sek}
+\item Spôsobu tvorby sekvenčných UML diagramov\ref{3sek}
+\item Príkladu UML integračného diagramu pre UPVS\ref{4sek}
 \end{itemize}
 
 Informácie pre vytvorenie tejto práce som čerpal:
@@ -72,18 +73,21 @@ Zoznam konkrétnej použitej literatúry je uvedený v prílohe Literatúra.\\
 Práca môže byť užitočná nielen pre analytikov, ktorí zodpovedajú za modelovanie integračných ``ÚPVS“ projektov, ale aj pre všeobecnejšie pochopenie zmyslu sekvenčných diagramov (ako integrálnej súčasti software development cyklov).
 
 
+
+
 \section{Popis UML a rozdelenie typov diagramov} \label{2sek}
 
 UML znamená Unified Modeling Language, teda grafický jazyk na vizualizáciu, špecifikáciu, navrhovanie a dokumentáciu programových systémov. 
-\newpage
-UML ponúka štandardný spôsob zápisu tak návrhov systémov vrátane konceptuálnych prvkov ako sú business procesy a systémové funkcie, tak konkrétnych prvkov ako sú príkazy programovacieho jazyka, databázové schémy a znovupoužiteľné programové komponenty.\cite{WIKI}\newline
+
+UML ponúka štandardný spôsob zápisu tak návrhov systémov vrátane konceptuálnych prvkov ako sú business procesy a systémové funkcie, tak konkrétnych prvkov ako sú príkazy programovacieho jazyka, databázové schémy a znovupoužiteľné programové komponenty.\cite{WIKI}\newpage
 
 Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakteristika je zrejmá z nasledovného obrázku\cite{UMLUni}:
 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{Images/Obr1.jpg}
+\includegraphics[width=0.8\textwidth]{Images/Obr1.jpg}
+\caption{Typy diagramov}
 \end{figure}
 
  Diagramy je teda možné rozdeliť do 3 základných skupín\cite{WIKI}:
@@ -104,7 +108,7 @@ Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakte
 	\item diagram prípadov použitia (use case diagram)
 	\item stavový diagram (state machine diagram)
 	\end{itemize}
-\newpage
+
 \item Diagramy interakcie, kam patria:
 	\begin{itemize}
 	\item sekvenčný diagram (sequence diagram)
@@ -118,7 +122,7 @@ Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakte
 
 \section{Sekvenčný diagram a jeho modelovanie} \label{3sek}
 
-Skevenčný diagram modeluje interakciu medzi objektami počas konkrétneho ``use case“, teda prípadu použitia. Graficky ilustruje, ako rozličné časti systému navzájom spolupracujú tak, aby zrealizovali požadovanú funkciu. Zjednodušene povedané: sekvenčný diagram ukazuje postup činností rozličných častí systému\cite{SDT}.\newline
+Skevenčný diagram modeluje interakciu medzi objektami počas konkrétneho ``use case“, teda prípadu použitia. Graficky ilustruje, ako rozličné časti systému navzájom spolupracujú tak, aby zrealizovali požadovanú funkciu.\ref{Strukt} Zjednodušene povedané: sekvenčný diagram ukazuje postup činností rozličných častí systému\cite{SDT}.\newline
 
 Pri zobrazení sa využívanie niekoľko značiek, pričom k najpoužívanejším patria:
 \begin{itemize}
@@ -136,23 +140,45 @@ Pri zobrazení sa využívanie niekoľko značiek, pričom k najpoužívanejší
 Na nasledovnom obrázku je ilustrácia jednoduchého sekvenčného diagramu, využívajúceho vyššie uvedené značky\cite{SDT}:
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{Images/Obr2.jpg}
+\includegraphics[width=0.75\textwidth]{Images/Obr2.jpg}
+\caption{Priklad štruktúry sekvenčného diagramu}
+\label{Strukt}
 \end{figure}
 
 
-\newpage
-\section{Nástroj na modelovanie formou sekvenčného UML diagramu} \label{4sek}
 
-..... nástroj bude doplnený...
+\section{Príklad UML integračného diagramu pre UPVS} \label{4sek}
 
-\section{Integračný scenár a jeho modelovanie} \label{5sek}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{Images/Obr3.jpg}
+\caption{Model pripojenia informačného systému k ÚPVS}
+\label{Model}
+\end{figure}
 
-..... test a diagramy budú doplnené... \\
+A teraz vam ukazem ako konkretne vyzeral jeden z modelov, ktory popisoval ako pripojime informacný system na danom ministerstve k UPVS. Na obrazku vydite 4 objekty. Prvy je samotny pouzivatel, druhy je jeho informacny system, najcastejsie to byva Registraturny system, to je pre spravu prijatej a odoslanej korespodencie. Treti objekt je takzvany adapter to je system ktory vytvara bezepecný kanal, zašifrovany kanal smerom k UPVS a teda 4 objekt je to k comu sa chce cez tieto dva predchadzajuce objekty alebo vrstvy samotny pouzivatel dostat a to je ten samotny ustredny portal, kam posiela napriklad nejaky elektronicky zaznam.\ref{Model}
 
+Teda z obrazku je vidiet typicku interakciu pri tom ked potrebuje pouzivatel poslat nejaky eletronicky dokument alebo hovori sa tomu aj podanie.\newline
+
+
+
+
+\section{Vyjadrenia na prednasky} \label{5sek}
+
+
+\paragraph{Spoločenské súvislosti: Na co budem inžinierom? }
+
+\paragraph{Technológia a ľudia.}
+
+\paragraph{Udržateľnosť a etika.}
 
 
 \section{Zhodnotenie} \label{6sek} 
-..... zhodnotenie bude doplnené... \\
+Takze este to troska zhrniem co bolo zmyslom prezentacie:
+ 
+preco to je dolezite, ako vyzera priklad konkretneho diagramu pripojenia a ze integrovanie na UPVS bude coraz dolezitejsie, kedze cez UPVS prechadza stale viac a viac elektronickej komunikacie. \\
+
+
 
 
 
