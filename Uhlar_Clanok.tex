@@ -81,13 +81,14 @@ UML znamená Unified Modeling Language, teda grafický jazyk na vizualizáciu, �
 
 UML ponúka štandardný spôsob zápisu tak návrhov systémov vrátane konceptuálnych prvkov ako sú business procesy a systémové funkcie, tak konkrétnych prvkov ako sú príkazy programovacieho jazyka, databázové schémy a znovupoužiteľné programové komponenty.\cite{WIKI}\newpage
 
-Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakteristika je zrejmá z nasledovného obrázku\cite{UMLUni}:
+Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakteristika je zrejmá z nasledovného obrázku\ref{TypyD}:
 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{Images/Obr1.jpg}
-\caption{Typy diagramov}
+\includegraphics[width=0.75\textwidth]{Images/Obr1.jpg}
+\caption{Typy diagramov\cite{UMLUni}}
+\label{TypyD}
 \end{figure}
 
  Diagramy je teda možné rozdeliť do 3 základných skupín\cite{WIKI}:
@@ -124,24 +125,30 @@ Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakte
 
 Skevenčný diagram modeluje interakciu medzi objektami počas konkrétneho ``use case“, teda prípadu použitia. Graficky ilustruje, ako rozličné časti systému navzájom spolupracujú tak, aby zrealizovali požadovanú funkciu.\ref{Strukt} Zjednodušene povedané: sekvenčný diagram ukazuje postup činností rozličných častí systému\cite{SDT}.\newline
 
-Pri zobrazení sa využívanie niekoľko značiek, pričom k najpoužívanejším patria:
-\begin{itemize}
-	\item Lifeline – životná línia
-	\item Actor – účinkujúci
-	\item Activity – aktivita
-	\item State – stav
-	\item Message arrow –tok informácie, ktorý môže byť:
-		\begin{itemize}
-		\item Synchronous (synchrónna)
-		\item Asynchronous (nesynchrónna)
-		\end{itemize}
-\end{itemize}
+Pri zobrazení sa využívanie niekoľko značiek, pričom k najpoužívanejším patria\ref{tabulka}:
+\begin{table}[h!]
+\centering
+\caption{Vysvetlenie daných značiek\cite{TabJa}}
+\label{tabulka}
+\resizebox{0.55\textwidth}{!}{%
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{c}{Značka} & \multicolumn{1}{c}{Význam} \\ \hline
+Lifeline                   & životná línia              \\ \hline
+Actor                      & účinkujúci                 \\ \hline
+Activity                   & aktivita                   \\ \hline
+State                      & stav                       \\ \hline
+Message arrow              & tok informácie     \\ \hline
+\end{tabular}%
+}
+\end {table}
+
 
 Na nasledovnom obrázku je ilustrácia jednoduchého sekvenčného diagramu, využívajúceho vyššie uvedené značky\cite{SDT}:
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.75\textwidth]{Images/Obr2.jpg}
-\caption{Priklad štruktúry sekvenčného diagramu}
+\caption{Priklad štruktúry sekvenčného diagramu\cite{SDT}}
 \label{Strukt}
 \end{figure}
 
@@ -152,21 +159,26 @@ Na nasledovnom obrázku je ilustrácia jednoduchého sekvenčného diagramu, vyu
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Images/Obr3.jpg}
-\caption{Model pripojenia informačného systému k ÚPVS}
+\caption{Prikladný model pripojenia informačného systému k ÚPVS\cite{UMLetJa}}
 \label{Model}
 \end{figure}
 
-A teraz vam ukazem ako konkretne vyzeral jeden z modelov, ktory popisoval ako pripojime informacný system na danom ministerstve k UPVS. Na obrazku vydite 4 objekty. Prvy je samotny pouzivatel, druhy je jeho informacny system, najcastejsie to byva Registraturny system, to je pre spravu prijatej a odoslanej korespodencie. Treti objekt je takzvany adapter to je system ktory vytvara bezepecný kanal, zašifrovany kanal smerom k UPVS a teda 4 objekt je to k comu sa chce cez tieto dva predchadzajuce objekty alebo vrstvy samotny pouzivatel dostat a to je ten samotny ustredny portal, kam posiela napriklad nejaky elektronicky zaznam.\ref{Model}
+Na nižšie uvedenom obrázku sa nachádza konkrétny príklad modelu - sekvenčného UML diagramu, ktorý popisuje spôsob pripojenie informačného systému daného ministerstva ku ÚPVS. Model zobrazuje štyri základné objekty, medzi ktorými prebieha tok údajov:
+\begin{description}
+\item a)        Používateľ informačného systému
+\item b)        Informačný systém (najčastejšie pre správu registratúry)
+\item c)        bezpečnostný ÚPVS adaptér, vytvárajúi zabezpečený komunikačný kanál
+\item d)        samotný ÚPVS portál so svojimi modulmi
+\end{description}
+Šípky v UNML diagrame predstavjú časovo synchronizované komunikačné kroky, ktoré zabezpečujú odoslanie údajov zo vstupného formulára (podania) do elektronickej schránky adresáta na ÚPVS a následne potvrdenie o úpešosti realizácie tejto operácie.\newline
 
-Teda z obrazku je vidiet typicku interakciu pri tom ked potrebuje pouzivatel poslat nejaky eletronicky dokument alebo hovori sa tomu aj podanie.\newline
 
 
 
+\section{Vyjadrenia na témy z prednasok} \label{5sek}
 
-\section{Vyjadrenia na prednasky} \label{5sek}
 
-
-\paragraph{Spoločenské súvislosti: Na co budem inžinierom? }
+\paragraph{Na co budem inžinierom?}
 
 \paragraph{Technológia a ľudia.}
 
@@ -174,9 +186,8 @@ Teda z obrazku je vidiet typicku interakciu pri tom ked potrebuje pouzivatel pos
 
 
 \section{Zhodnotenie} \label{6sek} 
-Takze este to troska zhrniem co bolo zmyslom prezentacie:
- 
-preco to je dolezite, ako vyzera priklad konkretneho diagramu pripojenia a ze integrovanie na UPVS bude coraz dolezitejsie, kedze cez UPVS prechadza stale viac a viac elektronickej komunikacie. \\
+Zmyslom tejto práce bolo charakterizovať modelovanie komunikácie v informačných systémoch pomocou sekvenčných UML diagramov a popísať konkrétny príklad, ktorý bol použitý pri projekte pripojenia informačného systému ministerstva ku ÚPVS.
+Tieto informácie môžu poslúžiť členom projektových tímov, ktorí sa ocitnú pred podobnou „integračnou“ výzvou – či už voči ÚPVS alebo ku inému systému. \\
 
 
 
