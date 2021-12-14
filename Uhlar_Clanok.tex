@@ -47,7 +47,7 @@ V tejto práci sa teda budem venovať teórii modelovania sekvenčných UML mode
 \flushleft
 \section{Úvod}\label{1sek}
 
-Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Umožňuje vykonávať elektronickú úradnú komunikáciu s ktorýmkoľvek orgánom verejnej moci a nasmeruje používateľa na využitie konkrétnej elektrickej služby verejnej správy. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné pristupovať k elektronickej schránke priamo z vlastných informačných systémov - teda bez nutosti prihlasovania sa eID - elektronického občianskeho preukazu.\cite{UPVS}\cite{SVK.sk} \\
+Ústredný portál verejnej správy (ÚPVS) je centrálnym miestom na podávanie a spracovanie elektronických podaní. Umožňuje vykonávať elektronickú úradnú komunikáciu s ktorýmkoľvek orgánom verejnej moci a nasmeruje používateľa na využitie konkrétnej elektrickej služby verejnej správy. Pre agendové informačné systémy poskytuje možnosť integrácie tak, aby bolo možné pristupovať k elektronickej schránke priamo z vlastných informačných systémov - teda bez nutnosti prihlasovania sa eID - elektronického občianskeho preukazu.\cite{UPVS}\cite{SVK.sk} \\
 
 Keďže spôsob pripojenia môže byť rôzny, správca ÚPVS (Národná agentúra pre sieťové a elektronické služby - NASES) vyžaduje podrobný integračný zámer, ktorého súčasťou je aj modelovanie integrácie vo forme sekvenčného UML diagramu.\newline
 
@@ -56,9 +56,9 @@ Keďže spôsob pripojenia môže byť rôzny, správca ÚPVS (Národná agentú
 V tejto práci sa teda budem venovať:
 
 \begin{itemize}
-\item Rámcovému popisu UML a typov diagramov\ref{2sek}
-\item Spôsobu tvorby sekvenčných UML diagramov\ref{3sek}
-\item Príkladu UML integračného diagramu pre UPVS\ref{4sek}
+\item Rámcovému popisu UML a typov diagramov \ref{2sek}
+\item Spôsobu tvorby sekvenčných UML diagramov \ref{3sek}
+\item Príkladu UML integračného diagramu pre UPVS \ref{4sek}
 \end{itemize}
 
 Informácie pre vytvorenie tejto práce som čerpal:
@@ -123,7 +123,7 @@ Pomocou UML je možné modelovať niekoľko rozličných diagramov. Ich charakte
 
 \section{Sekvenčný diagram a jeho modelovanie} \label{3sek}
 
-Skevenčný diagram modeluje interakciu medzi objektami počas konkrétneho ``use case“, teda prípadu použitia. Graficky ilustruje, ako rozličné časti systému navzájom spolupracujú tak, aby zrealizovali požadovanú funkciu.\ref{Strukt} Zjednodušene povedané: sekvenčný diagram ukazuje postup činností rozličných častí systému\cite{SDT}.\newline
+Sekvenčný diagram modeluje interakciu medzi objektami počas konkrétneho ``use case“, teda prípadu použitia. Graficky ilustruje, ako rozličné časti systému navzájom spolupracujú tak, aby zrealizovali požadovanú funkciu.\ref{Strukt} Zjednodušene povedané: sekvenčný diagram ukazuje postup činností rozličných častí systému\cite{SDT}.\newline
 
 Pri zobrazení sa využívanie niekoľko značiek, pričom k najpoužívanejším patria\ref{tabulka}:
 \begin{table}[h!]
@@ -167,28 +167,39 @@ Na nižšie uvedenom obrázku sa nachádza konkrétny príklad modelu - sekvenč
 \begin{description}
 \item a)        Používateľ informačného systému
 \item b)        Informačný systém (najčastejšie pre správu registratúry)
-\item c)        bezpečnostný ÚPVS adaptér, vytvárajúi zabezpečený komunikačný kanál
+\item c)        bezpečnostný ÚPVS adaptér, vytvárajú zabezpečený komunikačný kanál
 \item d)        samotný ÚPVS portál so svojimi modulmi
 \end{description}
-Šípky v UNML diagrame predstavjú časovo synchronizované komunikačné kroky, ktoré zabezpečujú odoslanie údajov zo vstupného formulára (podania) do elektronickej schránky adresáta na ÚPVS a následne potvrdenie o úpešosti realizácie tejto operácie.\newline
+Šípky v UML diagrame predstavujú časovo synchronizované komunikačné kroky, ktoré zabezpečujú odoslanie údajov zo vstupného formulára (podania) do elektronickej schránky adresáta na ÚPVS a následne potvrdenie o úpešnosti realizácie tejto operácie.\newline
 
 
 
+\newpage
+\section{Vyjadrenia na témy z prednášok} \label{5sek}
 
-\section{Vyjadrenia na témy z prednasok} \label{5sek}
 
+\paragraph{Spoločenské súvislosti informatiky}
 
-\paragraph{Na co budem inžinierom?}
+Motiváciou pôsobiť v tejto oblasti je vzťah ku programovaniu a využitím IT technológií možnosť ``kultivovať“ prácu používateľov. Zvlášť ma zaujíma ``human-computer“ interakcia – teda vytvárania ergonomicky správneho GUI.
 
 \paragraph{Technológia a ľudia.}
 
+Problémom tvorby informačných systémov je nejednosť v predstave o ich funkčnosti medzi používateľom, sponzorom (teda tým kto ho financuje) a tvorcom (software inžinierom). Každý z nich má o tej istej veci rôznu predstavu. Tak ako dodať technologické riešenie tak, aby bol súlad výsledku s predstavou na začiatku čo najbližší?
+
+\noindent Odpoveďou je agilný resp. tzv.  ``scrum“ prístup – teda tvorba systému v krokových iteráciach, kedy si ich používateľ priebežne overuje vytvorenú verziu systému a operatívne ``usmerňuje“ smer jej ďalšieho vývoja.
+
 \paragraph{Udržateľnosť a etika.}
+
+Činnosť v oblasti software inžinierstva sa zdá na prvý pohľad ``odtrhnutá“ od otázok udržateľného rozvoja spoločnosti. No po hlbšej analýze sa ukáže, že produkt tejto činnosti – informačné systémy – zásadne vplývajú na správanie sa ich používateľov. 
+
+\noindent Rozvoj digitalizácie spôsobuje stále väčší vplyv na život spoločnosti. Tento fakt otvára mnohé etické otázky, ktoré popisuje dokument ``Software Engineering Code of Ethics and Professional Practice“, kde sú popísané princípy ``príkladného správania“ pre sofware inžiniersto. Patrí tam napr. zohľadnenie záujmov používateľa, dôraz na profesionalitu pri tvorbe produktu, kooperácia s kolegami či celoživotné vzdelávanie.
 
 
 \section{Zhodnotenie} \label{6sek} 
 Zmyslom tejto práce bolo charakterizovať modelovanie komunikácie v informačných systémoch pomocou sekvenčných UML diagramov a popísať konkrétny príklad, ktorý bol použitý pri projekte pripojenia informačného systému ministerstva ku ÚPVS.
 Tieto informácie môžu poslúžiť členom projektových tímov, ktorí sa ocitnú pred podobnou „integračnou“ výzvou – či už voči ÚPVS alebo ku inému systému. \\
 
+\newpage
 
 
 
